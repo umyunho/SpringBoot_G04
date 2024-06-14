@@ -31,6 +31,6 @@
     </table>
 </form>
 <hr/>
-<a href="http://localhost:8070/test4/hong2/Hong3/25">전송</a>
+<a href="http://localhost:8070/test4/hong2/Hong3/25">http://localhost:8070/test4/hong2/Hong3/25</a>
 </body>
 </html>

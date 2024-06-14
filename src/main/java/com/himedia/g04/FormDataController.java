@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -56,9 +57,16 @@ public class FormDataController {
     }
 
     //PathVariable
-    @GetMapping("/test4")
-    public String test4(  ){
-
+    @GetMapping("/test4/{studentId}/{username}/{age}")
+    public String test4(
+            @PathVariable("studentId")String studentId,
+            @PathVariable("username")String username,
+            @PathVariable("age") int age,
+            Model model){
+        model.addAttribute("id", studentId);
+        model.addAttribute("name", username);
+        model.addAttribute("age", age);
+        return "test4";
     }
 
 
