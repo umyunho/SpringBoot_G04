@@ -4,6 +4,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -42,5 +43,23 @@ public class FormDataController {
 
         return "test2";
     }
+
+    @GetMapping("/test3")
+    public String test3(@ModelAttribute("mdto") MemberDto memberdto, Model model){
+        System.out.println(memberdto.getId());
+        System.out.println(memberdto.getName());
+        System.out.println(memberdto.getAge());
+
+        //model.addAttribute("mdto", memberdto);
+
+        return "test3";
+    }
+
+    //PathVariable
+    @GetMapping("/test4")
+    public String test4(  ){
+
+    }
+
 
 }
